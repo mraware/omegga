@@ -36,8 +36,8 @@ module.exports = omegga => {
         omegga.host = Object.freeze(host);
         omegga.emit('host', Object.freeze(host));
       } else if (type === 'valid') {
-        // let the server know it has started
-        omegga.emit('start');
+        // begin omegga prestart
+        omegga.prestart();
       } else if (type === 'invalid') {
         omegga.emit('unauthorized');
         // do nothing with invalid auth?? how did we get here
